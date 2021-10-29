@@ -5,14 +5,14 @@ const greet = document.querySelector(".greeting");
 const name = document.querySelector(".name");
 
 const timeofaday = [
-    'Утра',
-    'Обеда',
-    'Вечера',
-    'Ночи'
+    'morning',
+    'afternoon',
+    'evening',
+    'night'
 ];
 
-const timeOfDay = ShowTimeOfDay();
-const greetingText = `Доброго ${timeOfDay}`;
+export const timeOfDay = ShowTimeOfDay();
+const greetingText = `Good ${timeOfDay}`;
 
 function ShowTimeOfDay(){
     let result = '';
@@ -25,7 +25,7 @@ function ShowTimeOfDay(){
     if(hours > 17 && hours < 23){
         result = timeofaday[2];
     }
-    if(hours > 23 && hours < 6){
+    if((hours > 22 && hours < 25) || (hours < 6 && hours >= 0)){
         result = timeofaday[3];
     }
     return result;
