@@ -2,7 +2,7 @@ const date = new Date();
 const hours = date.getHours();
 
 const greet = document.querySelector(".greeting");
-const greetInput = document.querySelector(".name");
+const name = document.querySelector(".name");
 
 const timeofaday = [
     'Утра',
@@ -31,6 +31,23 @@ function ShowTimeOfDay(){
     return result;
 
 }
+
+export function setLocalStorage() {
+    localStorage.setItem('name', name.value);
+  }
+
+
+export function getLocalStorage() {
+  if(localStorage.getItem('name')) {
+    name.value = localStorage.getItem('name');
+  }
+}
+
+if(name.value == null || name.value == '' || name.value == undefined){
+    name.value == '[Enter name]';
+}
+
+
 export function showGreeting(){
     greet.textContent = greetingText;
     setTimeout(showGreeting, 1000);

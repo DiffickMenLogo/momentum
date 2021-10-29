@@ -1,6 +1,10 @@
 import { ShowDate } from './date';
 import { ShowTime } from './clock';
 import {showGreeting} from './greet';
+import {setLocalStorage} from './greet';
+import { getLocalStorage } from "./greet";
 ShowDate();
 ShowTime();
 showGreeting();
+window.addEventListener('beforeunload', setLocalStorage);
+window.addEventListener('load', getLocalStorage);
