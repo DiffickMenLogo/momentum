@@ -44,7 +44,7 @@ export function getLocalStorage() {
 }
 
 if(name.value == null || name.value == '' || name.value == undefined){
-    name.value == '[Enter name]';
+    name.value = '[Enter name]';
 }
 
 
