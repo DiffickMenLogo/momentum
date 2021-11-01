@@ -9,6 +9,8 @@ import { getSlidePerv } from "./slider";
 import { getWeather } from "./wether";
 import { getQuotes } from "./quotes";
 import { updateQuote } from "./quotes";
+import { pauseAudio, playAudio } from './audio';
+import { playList } from "./playList";
 ShowDate();
 
 ShowTime();
@@ -31,5 +33,20 @@ city.addEventListener('change', getWeather);
 getQuotes();
 const updateQuotes = document.querySelector(".change-quote");
 updateQuotes.addEventListener('click', updateQuote);
+
+let isPlay = false;
+
+const playIcon = document.querySelector('.play');
+playIcon.addEventListener('click',event => {
+    isPlay = !isPlay;
+    if(isPlay == true){
+        playAudio();
+        console.log(isPlay);
+    }
+    else if(isPlay == false){
+        pauseAudio();
+        console.log(isPlay);
+    }
+});
 
 
