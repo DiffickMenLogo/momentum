@@ -7,8 +7,8 @@ import { setBg } from "./slider";
 import { getSlideNext } from "./slider";
 import { getSlidePerv } from "./slider";
 import { getWeather } from "./wether";
-import { changeCity } from "./wether";
-// import { setBg } from './slider';
+import { getQuotes } from "./quotes";
+import { updateQuote } from "./quotes";
 ShowDate();
 
 ShowTime();
@@ -27,5 +27,9 @@ const city = document.querySelector(".city");
 city.value = "Минск";
 getWeather();
 city.addEventListener('change', getWeather);
+
+getQuotes();
+const updateQuotes = document.querySelector(".change-quote");
+updateQuotes.addEventListener('click', updateQuote);
 
 
