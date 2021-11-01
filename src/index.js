@@ -24,6 +24,8 @@ slideNext.addEventListener('click', getSlideNext);
 slidePerv.addEventListener('click', getSlidePerv);
 
 const city = document.querySelector(".city");
+city.value = "Минск";
 getWeather();
+city.addEventListener('change', getWeather);
 
 
