@@ -9,7 +9,7 @@ import { getSlidePerv } from "./slider";
 import { getWeather } from "./wether";
 import { getQuotes } from "./quotes";
 import { updateQuote } from "./quotes";
-import { pauseAudio, playAudio } from './audio';
+import { nextAudio, pauseAudio, pervAudio, playAudio } from './audio';
 import { playList } from "./playList";
 ShowDate();
 
@@ -39,14 +39,31 @@ let isPlay = false;
 const playIcon = document.querySelector('.play');
 playIcon.addEventListener('click',event => {
     isPlay = !isPlay;
+    playIcon.classList.toggle('pause');
     if(isPlay == true){
         playAudio();
-        console.log(isPlay);
     }
     else if(isPlay == false){
         pauseAudio();
-        console.log(isPlay);
     }
+});
+const playNext = document.querySelector('.play-next');
+playNext.addEventListener('click',() =>{
+    if(playIcon.classList.contains('pause') === false){
+        playIcon.classList.add('pause');
+    }
+    console.log(playIcon.classList.contains('pause'));
+    isPlay = true;
+    nextAudio();
+});
+const playPrev = document.querySelector('.play-prev');
+playPrev.addEventListener('click',() => {
+    if(playIcon.classList.contains('pause') === false){
+        playIcon.classList.add('pause');
+    }
+    console.log(playIcon.classList.contains('pause'));
+    isPlay = true;
+    pervAudio();
 });
 
 
