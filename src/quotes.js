@@ -4,7 +4,7 @@ var i = 1;
 
 export async function getQuotes() {  
     
-    const quotes = 'data.json';
+    const quotes = 'dist/data.json';
     const res = await fetch(quotes);
     const data = await res.json(); 
     quote.textContent = data[i].text;
